@@ -1,11 +1,10 @@
 const express = require('express');
-const fs = require('fs');
-const { v4: uuidv4 } = require('uuid');
+
+// Import our modular routers for /notes
+const notesRouter = require('./notes');
+
 const app = express();
 
-// Get route for recieving notes
-app.get('/notes', (req, res) =>
-  readFromFile('./db/db.json'), (err, data) => {
-    if (err) throw err;
-  res.json(JSON.parse(data));
-  });
+app.use('/notes', notesRouter);
+
+module.exports = app;
