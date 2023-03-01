@@ -19,7 +19,7 @@ notes.post('/', (req, res) => {
         title,
         message,
         id: uuid(),
-      };
+      }; 
   
       readAndAppend(newNote, './db/db.json');
   
