@@ -18,7 +18,7 @@ app.use('/api', api)
 app.use(express.static('public'));
 
 // GET Route for notes page
-app.get('/', (req, res) => {
+app.get('/routes/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'))
 });
 
