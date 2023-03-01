@@ -27,7 +27,7 @@ notes.post('/', (req, res) => {
         status: 'success',
         body: newNote,
       };
-  
+   
       res.json(response);
     } else {
       res.json('Error in posting note');
