@@ -17,15 +17,15 @@ app.use('/api', api)
 // Host public folder
 app.use(express.static('public'));
 
-// GET Route for notes page
-app.get('/routes/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/notes.html'))
-});
-
 // GET Route for homepage 
-app.get('*', (req, res) =>
+app.get('/', (req, res) =>
     res.sendFile(path.join(__dirname, './public/index.html'))
   );
+
+// GET Route for notes page
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/notes.html'))
+});
 
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
