@@ -1,5 +1,6 @@
 // Require express & API route
 const express = require('express');
+const path = require('path');
 const api = require('./routes/index.js');
 
 // Sets 3001 as the listening port
