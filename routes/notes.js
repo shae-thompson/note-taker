@@ -34,4 +34,14 @@ notes.post('/', (req, res) => {
     }
   });
 
+  notes.delete("/:id", (req, res) => {
+    const id = req.params.id;
+    if (id) {
+        readAndDelete(id, "./db/db.json");
+        res.json("Note deleted.");
+    } else {
+        res.json("Error ocuured while deleting note.");
+    }
+});
+
   module.exports = notes;
