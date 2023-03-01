@@ -10,14 +10,14 @@ notes.get('/', (req, res) => {
 // POST Route for saving notes
 notes.post('/', (req, res) => {
     // Destructuring assignment for the items in req.body
-    const { title, message } = req.body;
+    const { title, text } = req.body;
   
     // If all the required properties are present
-    if (title && message) {
+    if (title && text) {
       // Variable for the object we will save
       const newNote = {
         title,
-        message,
+        text,
         id: uuid(),
       }; 
   
